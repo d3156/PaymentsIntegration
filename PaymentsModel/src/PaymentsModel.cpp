@@ -1,0 +1,4 @@
+#include "PaymentsModel.hpp"
+
+// Implementation can stay in the header for now.
+// Keep this file for future expansion.
