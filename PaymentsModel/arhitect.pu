@@ -1,0 +1,21 @@
+@startuml
+
+component PaymentsModel{
+    component WebHookServer
+}
+
+component Store
+
+component FreeKassa
+component Wata
+component Yoomoney
+
+FreeKassa <--> WebHookServer : add hook path
+Wata <--> WebHookServer : add hook path
+Yoomoney <--> WebHookServer : add hook path
+
+Store <--> PaymentsModel : get payment link by order
+Store <--> PaymentsModel : callback about order
+
+
+@enduml
