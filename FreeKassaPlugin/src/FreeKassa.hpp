@@ -33,7 +33,6 @@ namespace FreeKassa
         std::pair<bool, std::string> handle_webhook_request(const beast::http::request<beast::http::string_body> &req,
                                                             const boost::asio::ip::address &client_ip);
 
-       
         void setPaymentCallback(PaymentsModel::PaymentCallback cb);
 
     private:

@@ -2,14 +2,13 @@
 
 void FreeKassaPlugin::registerArgs(d3156::Args::Builder &bldr)
 {
-    bldr.setVersion("FreeKassaPlugin " + std::string(FreeKassaPlugin_VERSION))
-        .addOption(configPath, "FreeKassaPath", "path to config for FreeKassa.json");
+    bldr.setVersion(FULL_NAME).addOption(configPath, "FreeKassaPath", "path to config for FreeKassa.json");
 }
 
 void FreeKassaPlugin::registerModels(d3156::PluginCore::ModelsStorage &models)
 {
-    model                    = RegisterModel("PaymentsModel", new PaymentsModel(), PaymentsModel);
-    MetricsModel::instance() = RegisterModel("MetricsModel", new MetricsModel(), MetricsModel);
+    model                    = models.registerModel<PaymentsModel>();
+    MetricsModel::instance() = models.registerModel<MetricsModel>();
 }
 
 // ABI required by d3156::PluginCore::Core (dlsym uses exact names)

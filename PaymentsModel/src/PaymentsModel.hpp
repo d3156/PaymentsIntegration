@@ -5,6 +5,7 @@
 #include <boost/thread.hpp>
 #include <EasyHttpLib/EasyWebServer>
 #include <memory>
+#include <string>
 #include <vector>
 
 struct Order {
@@ -13,7 +14,7 @@ struct Order {
     std::string &paymentProvider;
 
     enum class Status { InProcess, Fail, Canceled, Success };
-    Status status = Status::InProcess;
+    Status status             = Status::InProcess;
     std::string stauts_string = "InProcess";
 };
 
@@ -28,7 +29,7 @@ public:
     using PaymentCallback =
         std::function<void(const std::string &sender, const std::string &order_id, const std::string &amount)>;
 
-    d3156::PluginCore::model_name name() override { return "PaymentsModel"; }
+    static std::string name();
 
     std::unique_ptr<d3156::EasyWebServer> server;
 

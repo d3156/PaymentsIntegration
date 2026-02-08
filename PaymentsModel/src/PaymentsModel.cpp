@@ -15,3 +15,5 @@ PaymentsModel::~PaymentsModel()
 {
     if (server) server->stop();
 }
+
+std::string PaymentsModel::name() { return FULL_NAME; }

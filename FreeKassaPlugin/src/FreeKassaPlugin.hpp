@@ -8,9 +8,10 @@
 
 class FreeKassaPlugin final : public d3156::PluginCore::IPlugin
 {
-    PaymentsModel *model = nullptr;
+    PaymentsModel *model   = nullptr;
     std::string configPath = "./config/FreeKassa.json";
     std::unique_ptr<FreeKassa::Client> client;
+
 public:
     void registerArgs(d3156::Args::Builder &bldr) override;
 
@@ -21,8 +22,5 @@ public:
         // TODO: start threads / async jobs here if needed
     }
 
-    ~FreeKassaPlugin() {
-        client.reset();
-    }
+    ~FreeKassaPlugin() { client.reset(); }
 };
-

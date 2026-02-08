@@ -26,7 +26,7 @@ namespace FreeKassa
             return this->handle_webhook_request(req, client_ip);
         };
         if (std::filesystem::exists("./FreeKassa/Page.html"))
-         htmlPayPage = (std::ostringstream() << std::ifstream("./FreeKassa/Page.html").rdbuf()).str();
+            htmlPayPage = (std::ostringstream() << std::ifstream("./FreeKassa/Page.html").rdbuf()).str();
         htmlPayPage.assign(embedded_html_page.data(), embedded_html_page.size());
     }
 
