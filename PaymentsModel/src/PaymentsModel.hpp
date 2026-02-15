@@ -1,5 +1,5 @@
 #pragma once
-#include <PluginCore/IModel.hpp>
+#include <PluginCore/IModel>
 #include <functional>
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>

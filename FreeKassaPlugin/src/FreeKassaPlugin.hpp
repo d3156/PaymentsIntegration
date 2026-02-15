@@ -1,7 +1,7 @@
 #include "FreeKassa.hpp"
 #include <MetricsModel/MetricsModel>
-#include <PluginCore/IPlugin.hpp>
-#include <PluginCore/IModel.hpp>
+#include <PluginCore/IPlugin>
+#include <PluginCore/IModel>
 
 #include <PaymentsModel>
 #include <memory>
